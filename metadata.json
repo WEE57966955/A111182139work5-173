@@ -1,0 +1,8 @@
+{
+  "name": "吳衫憲的個人網站",
+  "description": "目前就讀於國立高雄科技大學航技系的吳衫憲個人作品集與經歷展示網站。",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
