@@ -101,8 +101,8 @@ const travelData = [
     title: "頂級藝文洗禮與雙城動態大跨越",
     tag: "歐陸文藝之美與海港夜流光",
     desc: "清晨沐浴於宏偉宮廷般的白色阿波羅大理石噴泉，隨後搭車速達高雄港都，享受精品頂級和牛，漫步極富科技未來感的灣區星光霓虹夜幕。",
-    highlightImage: "https://lh3.googleusercontent.com/d/11Gt-2u7MGx5XQYOOQzDJ09JTaS7oluCr",
-    imageCaption: "高雄旗後燈塔 (Cijin Lighthouse)：純白燈塔塔身於瑰麗的金色餘暉中靜看港灣浪濤，露台露天座點綴點點暖黃燈泡串，海天一色無比浪漫",
+    highlightImage: "",
+    imageCaption: "奇美博物館：純白希臘古典主體建築巍然屹立於碧藍池畔，透出令人屏息的人文神聖美感",
     colorTheme: "from-blue-500 to-indigo-600",
     textTheme: "text-blue-600",
     bgLight: "bg-blue-50/30",
@@ -186,17 +186,19 @@ const TravelItinerary = () => {
         {/* Right Side Visual/Description (5 Columns) */}
         <div className="md:col-span-5 space-y-6">
           <Card className="overflow-hidden p-0 border border-gray-100 bg-gray-50/50">
-            <div className="relative aspect-4/3 overflow-hidden bg-gray-100">
-              <img
-                src={currentDay.highlightImage}
-                alt={currentDay.imageCaption}
-                className="w-full h-full object-cover select-none"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md border border-gray-100 px-3 py-1 rounded-full text-xs font-extrabold text-gray-800 tracking-wide shadow-sm">
-                精彩實拍地標
+            {currentDay.highlightImage && (
+              <div className="relative aspect-4/3 overflow-hidden bg-gray-100">
+                <img
+                  src={currentDay.highlightImage}
+                  alt={currentDay.imageCaption}
+                  className="w-full h-full object-cover select-none"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md border border-gray-100 px-3 py-1 rounded-full text-xs font-extrabold text-gray-800 tracking-wide shadow-sm">
+                  精彩實拍地標
+                </div>
               </div>
-            </div>
+            )}
             <div className="p-6">
               <span className={`text-xs font-black uppercase tracking-widest ${currentDay.textTheme}`}>
                 {currentDay.tag}
@@ -207,9 +209,11 @@ const TravelItinerary = () => {
               <p className="text-sm text-gray-500 leading-relaxed mb-4">
                 {currentDay.desc}
               </p>
-              <div className="text-xs font-medium text-gray-500 bg-yellow-50/50 text-amber-700 p-3 rounded-xl border border-amber-100/30">
-                📷 實景特寫：{currentDay.imageCaption}
-              </div>
+              {currentDay.highlightImage && (
+                <div className="text-xs font-medium text-gray-500 bg-yellow-50/50 text-amber-700 p-3 rounded-xl border border-amber-100/30">
+                  📷 實景特寫：{currentDay.imageCaption}
+                </div>
+              )}
             </div>
           </Card>
         </div>
@@ -220,27 +224,19 @@ const TravelItinerary = () => {
         <h3 className="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
           <ImageIcon size={18} className="text-blue-600" /> 三天雙城寫意瞬間與生活隨拍（對應手記景點）
         </h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
           {[
-            {
-              title: "神農老街復古大紅燈影",
-              url: "https://images.unsplash.com/photo-1549396555-3d7d35124115?auto=format&fit=crop&q=80&w=400"
-            },
             {
               title: "四草綠意盎然生態水道",
               url: "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?auto=format&fit=crop&q=80&w=400"
             },
             {
-              title: "奇美博物館阿波羅噴泉",
-              url: "https://images.unsplash.com/photo-1595113316349-9fa4ee24f884?auto=format&fit=crop&q=80&w=400"
-            },
-            {
               title: "高雄旗後燈塔露台暮色",
-              url: "https://lh3.googleusercontent.com/d/11Gt-2u7MGx5XQYOOQzDJ09JTaS7oluCr"
+              url: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=400"
             }
           ].map((item, idx) => (
-            <div key={idx} className="group overflow-hidden rounded-2xl relative bg-gray-50 border border-gray-100/50 hover:-translate-y-1 transition-all">
-              <div className="aspect-square w-full h-full overflow-hidden">
+            <div key={idx} className="group overflow-hidden rounded-2xl relative bg-gray-50 border border-gray-100/50 hover:-translate-y-1 transition-all shadow-sm aspect-video">
+              <div className="w-full h-full overflow-hidden">
                 <img
                   src={item.url}
                   alt={item.title}
@@ -312,8 +308,6 @@ const TravelItinerary = () => {
 };
 
 export default function App() {
-  const profileImageUrl = "https://lh3.googleusercontent.com/d/11Gt-2u7MGx5XQYOOQzDJ09JTaS7oluCr";
-
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans selection:bg-blue-100 selection:text-blue-900">
       <Navigation />
@@ -328,20 +322,20 @@ export default function App() {
               transition={{ duration: 0.5 }}
               className="relative"
             >
-              <div className="w-48 h-64 rounded-2xl overflow-hidden shadow-2xl bg-gray-100">
+              <div className="w-48 h-64 rounded-2xl overflow-hidden shadow-xl bg-gray-100 border border-gray-100/80">
                 <img 
-                  src={profileImageUrl}
+                  src="https://lh3.googleusercontent.com/d/11Gt-2u7MGx5XQYOOQzDJ09JTaS7oluCr"
                   alt="吳衫憲" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    target.src = "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=250&auto=format&fit=crop";
+                    target.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400";
                   }}
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-blue-600 text-white p-4 rounded-xl shadow-lg">
-                <User size={24} />
+              <div className="absolute -bottom-3 -right-3 bg-blue-600 text-white p-3 rounded-xl shadow-lg leading-none border border-blue-500">
+                <User size={20} />
               </div>
             </motion.div>
 
