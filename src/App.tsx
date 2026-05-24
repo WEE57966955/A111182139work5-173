@@ -56,63 +56,62 @@ const Card = ({ children, className = "" }: { children: React.ReactNode; classNa
     {children}
   </div>
 );
-
 const travelData = [
   {
     day: "Day 1",
     date: "4/3 (FRI)",
-    title: "古都探索與歷史漫步",
-    tag: "古都街道巷尾",
-    desc: "三天兩夜精彩的台南與高雄雙城之旅揭開序幕，開篇聚焦於古樸老街道與在地傳統人文驚喜。",
-    highlightImage: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=1200",
-    imageCaption: "神農老街：在紅色傳統燈籠高掛的暮色下，散發濃厚台南歲月感",
+    title: "古都探索與歷史漫步及老宅幽靜",
+    tag: "古都街道巷尾尋味",
+    desc: "三天兩夜精彩的台南與高雄雙城之旅揭開序幕，首日聚焦於古樸的老街道浪漫燈光與台南在地悠遠的歷史人文驚喜。",
+    highlightImage: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&q=80&w=1200",
+    imageCaption: "神農老街與國華街：在紅色傳統燈籠高高懸掛的復古暮色下，散發原汁原味的府城歲月溫度",
     colorTheme: "from-amber-500 to-orange-600",
     textTheme: "text-amber-600",
     bgLight: "bg-amber-50/50",
     timeline: [
-      { time: "14:00", title: "台南火車站集合 / 辦理入住", details: "與夥伴愉快集合！前往中西區歷史人文老宅設計民宿辦理入住並安放行李。", price: "免費" },
-      { time: "16:30", title: "神農街 & 國華街古樸漫觀", details: "穿梭極具歷史韻味的狹窄老街，踏尋台南傳統街屋與青年文創小店的融合美景。", price: "$150" },
-      { time: "19:00", title: "在地風味小吃晚餐", details: "品嘗祖傳台南米糕、現包潤餅與黑糖古早味豆花，齒頰留香。", price: "$200" },
-      { time: "21:30", title: "中西區老宅庭院泡茶", details: "回歸幽靜老宅感受寧靜氛圍而沉靜心緒，補足睡眠儲備充足精力。", price: "$2,500" }
+      { time: "14:00", title: "台南火車站集合 / 民宿辦理入住", details: "與旅伴愉快會合！前往台南中西區精緻人文設計老宅民宿辦理 Check-in 並妥善安放行李。", price: "免費" },
+      { time: "16:30", title: "神農老街與國華街古樸漫觀", details: "漫步穿梭於府城極富時代縮影的蜿蜒老巷弄，近距離踏尋懷舊民居木造老外牆與精美手作青年文創小店的完美撞擊。", price: "$150" },
+      { time: "19:00", title: "台南在地風味特色小吃晚餐", details: "品嘗正宗台南傳統米糕、金得春捲（傳統應景潤餅）與古早味手作黑糖傳統豆花，感受微甜細膩層次。", price: "$200" },
+      { time: "21:30", title: "人文老宅幽靜庭院泡茶品茶", details: "夜幕低垂，在靜謐老宅天井中感受大隱於市的悠然氛圍，忘卻一切都會喧囂、補足高質量睡眠。", price: "$2,500" }
     ]
   },
   {
     day: "Day 2",
     date: "4/4 (SAT)",
-    title: "綠色生態與無菜單饗宴",
-    tag: "絕美綠色隧道",
-    desc: "上午擁抱台江國寶級紅樹林生態隧道，下午尋跡安平古堡與大榕樹，晚上在清代閩式老店內享用私房無菜單料理。",
-    highlightImage: "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?auto=format&fit=crop&q=80&w=1200",
-    imageCaption: "四草綠色隧道：參天古榕樹冠合攏反映於澄澈河面，宛若奇幻夢境綠意",
+    title: "綠色生態與無菜單奢華饗宴",
+    tag: "絕美綠意倒影綠色隧道",
+    desc: "上午驚嘆於台江國寶級榕樹樹冠合攏反映於河面的綠色生態奇蹟；漫步老榕樹盤纏歷史遺跡，晚間置身百年閩式老宅細品私房無菜單手路菜珍饈。",
+    highlightImage: "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?auto=format&fit=crop&q=80&w=1200", 
+    imageCaption: "四草綠色隧道：參天榕樹綠葉茂密相連，於平滑澄澈的水面折射出夢幻的綠光走廊，美如仙境",
     colorTheme: "from-green-500 to-emerald-600",
     textTheme: "text-emerald-600",
     bgLight: "bg-emerald-50/30",
     timeline: [
-      { time: "08:30", title: "金得春捲 (傳統潤餅)", details: "飲食：清明應景、台南人心中的古早滋味，微甜多料且香滑細緻。", price: "$100" },
-      { time: "10:00", title: "四草綠色隧道深度探索", details: "門票：搭乘竹筏由專業導覽徐徐穿梭絕美的紅樹林水道與綠葉隧道，目睹水陸蟹與招潮蟹生態 (2026標準票價)。", price: "$200" },
-      { time: "13:00", title: "安平古堡 / 安平樹屋參訪", details: "門票：走入融合粗獷大榕樹枝幹與英德舊城遺跡的夢幻廢墟，一票暢遊雙老城區古蹟。", price: "$100" },
-      { time: "15:00", title: "文章牛肉湯午餐", details: "飲食：鮮甜甘美溫體牛肉湯代表！高溫現燙鮮美滑透，搭配甘美薑絲與油亮肉燥飯堪稱完美搭配。", price: "$400" },
-      { time: "19:00", title: "築馨居 (私房無菜單料理)", details: "飲食：預約制百年老屋私廚！品嚐懷舊經典手路菜、東坡肉與傳統手工豆花 (註：需嚴格提前21天完成預約)。", price: "$900" },
-      { time: "21:00", title: "回返中西區老街民宿", details: "住宿：落腳於台南心臟街區老宅，夜色迷人安逸、享受精緻水洗沐浴體驗。", price: "$2,500" }
+      { time: "08:30", title: "金得春捲 (台南應景傳統潤餅)", details: "飲食：清明時節必吃！包入高麗菜、皇帝豆、現炒肉片、蝦仁並灑滿香氣撲鼻的純手作花生糖粉（甜度可選），口感飽滿微甜、滋味鮮嫩無比。", price: "$100" },
+      { time: "10:00", title: "四草綠色隧道深度生態探索", details: "門票：戴上斗笠搭乘竹筏由專業導覽徐徐撐篙前行。穿梭於被冠以『台灣袖珍版亞馬遜河』的紅樹林低矮隧道，沿途觀看兩旁細小的招潮蟹與彈塗魚，美得屏息 (2026標準票價)。", price: "$200" },
+      { time: "13:00", title: "安平古堡 & 安平樹屋參訪", details: "門票：漫步驚嘆大榕樹攀附包覆在殘敗英德倉庫百年牆磚上的奇幻廢墟。一票雙享受，深度感知荷蘭統治時期的斑駁城牆與時代變幻。", price: "$100" },
+      { time: "15:00", title: "文章牛肉湯香嫩午餐", details: "飲食：朝聖台南溫體生牛肉現淋熱湯的代表店！特選極致軟嫩溫體牛肉，高溫清湯沖下瞬間將肉汁鎖入，湯頭甘醇甜美，沾附豆瓣醬與薑絲再配上飽滿肉燥飯堪稱人間享受。", price: "$400" },
+      { time: "19:00", title: "築馨居 (私房無菜單手路菜餐酒宴)", details: "飲食：隱藏於信義街百年老閩式厝身內的無菜單名店！品嚐精緻紅燒東坡肉、精燉老鴨湯與傳統香滑古早豆花。因古厝座位極珍貴，強烈建議提早21天前在線上預約確認。", price: "$900" },
+      { time: "21:00", title: "折返中西區老宅民宿安息", details: "住宿：漫步經微醺朦朧的府城夜街返抵居所，享受純棉舒適被床與熱水溫潤淋浴，深沉熟睡補足飽滿精力。", price: "$2,500" }
     ]
   },
   {
     day: "Day 3",
     date: "4/5 (SUN)",
-    title: "藝文洗禮與雙城移動",
-    tag: "優雅古物與港都夜海",
-    desc: "上午飽覽宏偉的歐式宮廷頂級西洋收藏，隨後南下進駐高雄，品味港都頂級燒肉與海洋流行音樂中心之流光溢彩。",
-    highlightImage: "https://images.unsplash.com/photo-1595113316349-9fa4ee24f884?auto=format&fit=crop&q=80&w=1200",
-    imageCaption: "奇美博物館阿波羅噴泉：純白希臘古典雕像噴泉在藍白雲天襯托下騰空漫射、氣勢非凡",
+    title: "頂級藝文洗禮與雙城動態大跨越",
+    tag: "歐陸文藝之美與海港夜流光",
+    desc: "清晨沐浴於宏偉宮廷般的白色阿波羅大理石噴泉，隨後搭車速達高雄港都，享受精品頂級和牛，漫步極富科技未來感的灣區星光霓虹夜幕。",
+    highlightImage: "https://lh3.googleusercontent.com/d/11Gt-2u7MGx5XQYOOQzDJ09JTaS7oluCr",
+    imageCaption: "高雄旗後燈塔 (Cijin Lighthouse)：純白燈塔塔身於瑰麗的金色餘暉中靜看港灣浪濤，露台露天座點綴點點暖黃燈泡串，海天一色無比浪漫",
     colorTheme: "from-blue-500 to-indigo-600",
     textTheme: "text-blue-600",
     bgLight: "bg-blue-50/30",
     timeline: [
-      { time: "09:30", title: "奇美博物館人文美學之旅", details: "門票：參觀2026年度重量級特企『埃及法老特展』，漫步在阿波羅大理石噴泉並欣賞巴洛克典雅白色拱橋建築。", price: "$580" },
-      { time: "12:30", title: "十鼓仁糖文創園區體驗", details: "門票：由百年製糖老工廠再創生存之極限遊樂場！體驗巨型煙囪滑梯、空中鋼索與震撼人心的極限擊鼓表演。", price: "$509" },
-      { time: "16:30", title: "雙城大移動：前進高雄市區", details: "交通：自台南火車站悠閒乘坐鐵道區間車徐徐南下，沿途觀賞南部平疇綠野直到左營新站。", price: "$60" },
-      { time: "19:00", title: "碳佐麻里 (精品和牛燒肉)", details: "飲食：朝聖南部精品燒肉天花板！在當代清水模宏大藝術地標中，享用多汁冷藏和牛與炭火串燒。", price: "$1,800" },
-      { time: "21:00", title: "入住高雄亞灣區海景飯店", details: "住宿：入住頂級星級景觀房，臨窗俯瞰絢麗奪目的愛河港灣、駁二特區與流行音樂中心科技炫彩霓虹 (連假特價)。", price: "$3,500" }
+      { time: "09:30", title: "奇美博物館人文美學神殿之旅", details: "門票：欣賞矗立於碧綠池畔的巴洛克白色宏偉主體，漫步至入口壯觀的阿波羅大理石群體噴泉。特別參觀2026年度殿堂級藝術『古埃及法老特展』與大師西洋名畫。", price: "$580" },
+      { time: "12:30", title: "十鼓仁糖文創園區刺激極限挑戰", details: "門票：廢棄老製糖廠幻化而成的夢幻娛樂堡壘！極速飛越的滑車、巨幅極限溜滑梯及空中飛索，更可觀摩宏觀、引人熱血沸騰的十鼓震撼擊鼓劇場演出。", price: "$509" },
+      { time: "16:30", title: "鐵道雙城大移動：開抵港都高雄", details: "交通：自台南搭上自強或區間列車一路南下。倚窗俯瞰嘉南平原、漁光綠野直到高雄左營新站，接軌高捷馳往心儀旅館。", price: "$60" },
+      { time: "19:00", title: "碳佐麻里 (亞洲頂尖精品燒肉宴)", details: "飲食：朝聖南部燒肉界的時尚清水模地標奢華名店！在當代建築水景環繞下，體驗頂級多汁冷藏和牛與香烤炭火串燒，肉香馥郁令人驚豔。", price: "$1,800" },
+      { time: "21:00", title: "高雄港亞灣星級海景大飯店入住", details: "住宿：夜晚臨窗俯瞰絢麗愛河灣、駁二文創園區以及科技感十足、閃耀粉藍幻彩的流行音樂中心，感受完美港都旅宿驚嘆。 (連假特價)", price: "$3,500" }
     ]
   }
 ];
@@ -179,8 +178,8 @@ const TravelItinerary = () => {
           </div>
 
           <div className="p-4 bg-gray-50/50 border border-gray-100 rounded-2xl flex justify-between items-center text-xs text-gray-400">
-            <span>旅程規劃：三天兩夜</span>
-            <span>當日預估預算：約 $3,800 + 交通</span>
+            <span>當日行程規劃：深度主題遊</span>
+            <span>單日估算精緻費用：約 $3,600 ~ $4,500 (含高檔住宿)</span>
           </div>
         </div>
 
@@ -195,7 +194,7 @@ const TravelItinerary = () => {
                 referrerPolicy="no-referrer"
               />
               <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md border border-gray-100 px-3 py-1 rounded-full text-xs font-extrabold text-gray-800 tracking-wide shadow-sm">
-                精彩地標展示
+                精彩實拍地標
               </div>
             </div>
             <div className="p-6">
@@ -208,8 +207,8 @@ const TravelItinerary = () => {
               <p className="text-sm text-gray-500 leading-relaxed mb-4">
                 {currentDay.desc}
               </p>
-              <div className="text-xs font-medium text-gray-400 bg-gray-100/50 p-3 rounded-xl border border-gray-100/30">
-                ⭐ {currentDay.imageCaption}
+              <div className="text-xs font-medium text-gray-500 bg-yellow-50/50 text-amber-700 p-3 rounded-xl border border-amber-100/30">
+                📷 實景特寫：{currentDay.imageCaption}
               </div>
             </div>
           </Card>
@@ -219,25 +218,25 @@ const TravelItinerary = () => {
       {/* Bonus Journey Memories Grid - "另外幾張旅行圖片也加進去" */}
       <div className="pt-12 border-t border-gray-100/80">
         <h3 className="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
-          <ImageIcon size={18} className="text-blue-600" /> 三天足跡精彩瞬間寫真
+          <ImageIcon size={18} className="text-blue-600" /> 三天雙城寫意瞬間與生活隨拍（對應手記景點）
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             {
-              title: "安平老厝綠蔭",
-              url: "https://images.unsplash.com/photo-1504618223053-559bdef9dd5a?auto=format&fit=crop&q=80&w=400"
-            },
-            {
-              title: "台南街頭巷弄尋味",
-              url: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&q=80&w=400"
-            },
-            {
-              title: "神農浪漫燈影",
+              title: "神農老街復古大紅燈影",
               url: "https://images.unsplash.com/photo-1549396555-3d7d35124115?auto=format&fit=crop&q=80&w=400"
             },
             {
-              title: "高雄駁二漫步之旅",
-              url: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&q=80&w=400"
+              title: "四草綠意盎然生態水道",
+              url: "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?auto=format&fit=crop&q=80&w=400"
+            },
+            {
+              title: "奇美博物館阿波羅噴泉",
+              url: "https://images.unsplash.com/photo-1595113316349-9fa4ee24f884?auto=format&fit=crop&q=80&w=400"
+            },
+            {
+              title: "高雄旗後燈塔露台暮色",
+              url: "https://lh3.googleusercontent.com/d/11Gt-2u7MGx5XQYOOQzDJ09JTaS7oluCr"
             }
           ].map((item, idx) => (
             <div key={idx} className="group overflow-hidden rounded-2xl relative bg-gray-50 border border-gray-100/50 hover:-translate-y-1 transition-all">
@@ -248,11 +247,64 @@ const TravelItinerary = () => {
                   className="w-full h-full object-cover group-hover:scale-105 duration-300 transition-transform"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-4">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-4">
                 <span className="text-white text-xs font-bold leading-none">{item.title}</span>
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* TRIP SUMMARY COMPONENT - "最後還有總結" */}
+      <div className="pt-12 border-t border-gray-100/80">
+        <div className="bg-slate-900 text-white rounded-3xl p-8 md:p-10 shadow-xl relative overflow-hidden">
+          {/* Subtly animated background pattern */}
+          <div className="absolute right-0 bottom-0 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+          
+          <div className="relative z-10 space-y-8">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-slate-800 pb-6">
+              <div>
+                <span className="text-blue-400 font-mono text-xs uppercase tracking-wider font-extrabold">🏆 旅程總結晶</span>
+                <h3 className="text-2xl font-extrabold tracking-tight mt-1">台南·高雄 雙城精奢總結與反思</h3>
+              </div>
+              <div className="flex items-center gap-2 bg-blue-600/20 text-blue-400 border border-blue-500/20 px-4 py-1.5 rounded-full text-xs font-bold font-mono">
+                🎯 奢華漫遊 · 兼顧性價比與美學
+              </div>
+            </div>
+
+            {/* Quick Stats Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="p-4 bg-slate-800/40 rounded-2xl border border-slate-800">
+                <p className="text-xs text-slate-400">總旅程天數</p>
+                <p className="text-3xl font-black mt-1 text-white font-mono">3 <span className="text-xs font-normal">Days</span></p>
+              </div>
+              <div className="p-4 bg-slate-800/40 rounded-2xl border border-slate-800">
+                <p className="text-xs text-slate-400">探訪核心地標</p>
+                <p className="text-3xl font-black mt-1 text-white font-mono">15 <span className="text-xs font-normal">Spots</span></p>
+              </div>
+              <div className="p-4 bg-slate-800/40 rounded-2xl border border-slate-800">
+                <p className="text-xs text-slate-400">精誠預算開支</p>
+                <p className="text-3xl font-black mt-1 text-emerald-400 font-mono">$11,859 <span className="text-xs font-normal text-slate-400">TWD</span></p>
+              </div>
+              <div className="p-4 bg-slate-800/40 rounded-2xl border border-slate-800">
+                <p className="text-xs text-slate-400">心靈充實度</p>
+                <p className="text-3xl font-black mt-1 text-yellow-400 font-mono">100%</p>
+              </div>
+            </div>
+
+            {/* Detailed Summary Analysis Text */}
+            <div className="space-y-4 text-sm text-slate-300 leading-relaxed font-sans">
+              <p>
+                本次規劃的 <strong>台南－高雄雙城奢華美學之旅</strong>，旨在打破走馬看花的傳統旅遊，追求 <span className="text-blue-400 font-semibold">「人文意境、自然生態、當代藝文與頂級味蕾」</span> 的大成融合。
+              </p>
+              <p>
+                從首日沉醉於 <strong>神農古街與國華老鋪</strong> 的台南老派煙火氣，到次日探尋 <strong>四草紅樹林秘境隧道</strong> 與 <strong>安平榕根廢墟</strong> 的原始大自然傑作；再至最終日登臨 <strong>奇美博物館歐陸白色美學神殿</strong> 與 <strong>十鼓老糖廠鋼脈挑戰</strong>，並以 <strong>高雄亞灣愛河灣星港霓虹</strong> 寫下圓滿詩篇。
+              </p>
+              <p>
+                本系列行程經過極其精密的動線與預算考量，門票花費合理（總共約 1,389 元即能體驗四草、安平、十鼓及奇美埃及特展），並將主要重心放進 <strong>「美食饗宴體驗（築馨居百年私廚與碳佐麻里精品燒肉）」</strong> 以及 <strong>「高品質星級/古蹟宿處享受」</strong> 之中。不僅讓身體與心智獲得完美的充電洗禮，更成就了無可取代的南部豐沛旅程回憶。
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
