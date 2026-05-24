@@ -17,7 +17,11 @@ import {
   ChevronRight,
   ExternalLink,
   Box,
-  Languages
+  Languages,
+  Compass,
+  MapPin,
+  Calendar,
+  Heart
 } from "lucide-react";
 
 const Navigation = () => (
@@ -31,6 +35,7 @@ const Navigation = () => (
         <a href="#experience" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">經歷</a>
         <a href="#skills" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">技能</a>
         <a href="#languages" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">語言</a>
+        <a href="#travel" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">旅程足跡</a>
         <a href="#portfolio" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">AI 專區</a>
       </div>
     </div>
@@ -51,6 +56,208 @@ const Card = ({ children, className = "" }: { children: React.ReactNode; classNa
     {children}
   </div>
 );
+
+const travelData = [
+  {
+    day: "Day 1",
+    date: "4/3 (FRI)",
+    title: "古都探索與歷史漫步",
+    tag: "古都街道巷尾",
+    desc: "三天兩夜精彩的台南與高雄雙城之旅揭開序幕，開篇聚焦於古樸老街道與在地傳統人文驚喜。",
+    highlightImage: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&q=80&w=1200",
+    imageCaption: "神農老街：在紅色傳統燈籠高掛的暮色下，散發濃厚台南歲月感",
+    colorTheme: "from-amber-500 to-orange-600",
+    textTheme: "text-amber-600",
+    bgLight: "bg-amber-50/50",
+    timeline: [
+      { time: "14:00", title: "台南火車站集合 / 辦理入住", details: "與夥伴愉快集合！前往中西區歷史人文老宅設計民宿辦理入住並安放行李。", price: "免費" },
+      { time: "16:30", title: "神農街 & 國華街古樸漫觀", details: "穿梭極具歷史韻味的狹窄老街，踏尋台南傳統街屋與青年文創小店的融合美景。", price: "$150" },
+      { time: "19:00", title: "在地風味小吃晚餐", details: "品嘗祖傳台南米糕、現包潤餅與黑糖古早味豆花，齒頰留香。", price: "$200" },
+      { time: "21:30", title: "中西區老宅庭院泡茶", details: "回歸幽靜老宅感受寧靜氛圍而沉靜心緒，補足睡眠儲備充足精力。", price: "$2,500" }
+    ]
+  },
+  {
+    day: "Day 2",
+    date: "4/4 (SAT)",
+    title: "綠色生態與無菜單饗宴",
+    tag: "絕美綠色隧道",
+    desc: "上午擁抱台江國寶級紅樹林生態隧道，下午尋跡安平古堡與大榕樹，晚上在清代閩式老店內享用私房無菜單料理。",
+    highlightImage: "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?auto=format&fit=crop&q=80&w=1200",
+    imageCaption: "四草綠色隧道：參天古榕樹冠合攏反映於澄澈河面，宛若奇幻夢境綠意",
+    colorTheme: "from-green-500 to-emerald-600",
+    textTheme: "text-emerald-600",
+    bgLight: "bg-emerald-50/30",
+    timeline: [
+      { time: "08:30", title: "金得春捲 (傳統潤餅)", details: "飲食：清明應景、台南人心中的古早滋味，微甜多料且香滑細緻。", price: "$100" },
+      { time: "10:00", title: "四草綠色隧道深度探索", details: "門票：搭乘竹筏由專業導覽徐徐穿梭絕美的紅樹林水道與綠葉隧道，目睹水陸蟹與招潮蟹生態 (2026標準票價)。", price: "$200" },
+      { time: "13:00", title: "安平古堡 / 安平樹屋參訪", details: "門票：走入融合粗獷大榕樹枝幹與英德舊城遺跡的夢幻廢墟，一票暢遊雙老城區古蹟。", price: "$100" },
+      { time: "15:00", title: "文章牛肉湯午餐", details: "飲食：鮮甜甘美溫體牛肉湯代表！高溫現燙鮮美滑透，搭配甘美薑絲與油亮肉燥飯堪稱完美搭配。", price: "$400" },
+      { time: "19:00", title: "築馨居 (私房無菜單料理)", details: "飲食：預約制百年老屋私廚！品嚐懷舊經典手路菜、東坡肉與傳統手工豆花 (註：需嚴格提前21天完成預約)。", price: "$900" },
+      { time: "21:00", title: "回返中西區老街民宿", details: "住宿：落腳於台南心臟街區老宅，夜色迷人安逸、享受精緻水洗沐浴體驗。", price: "$2,500" }
+    ]
+  },
+  {
+    day: "Day 3",
+    date: "4/5 (SUN)",
+    title: "藝文洗禮與雙城移動",
+    tag: "優雅古物與港都夜海",
+    desc: "上午飽覽宏偉的歐式宮廷頂級西洋收藏，隨後南下進駐高雄，品味港都頂級燒肉與海洋流行音樂中心之流光溢彩。",
+    highlightImage: "https://images.unsplash.com/photo-1595113316349-9fa4ee24f884?auto=format&fit=crop&q=80&w=1200",
+    imageCaption: "奇美博物館阿波羅噴泉：純白希臘古典雕像噴泉在藍白雲天襯托下騰空漫射、氣勢非凡",
+    colorTheme: "from-blue-500 to-indigo-600",
+    textTheme: "text-blue-600",
+    bgLight: "bg-blue-50/30",
+    timeline: [
+      { time: "09:30", title: "奇美博物館人文美學之旅", details: "門票：參觀2026年度重量級特企『埃及法老特展』，漫步在阿波羅大理石噴泉並欣賞巴洛克典雅白色拱橋建築。", price: "$580" },
+      { time: "12:30", title: "十鼓仁糖文創園區體驗", details: "門票：由百年製糖老工廠再創生存之極限遊樂場！體驗巨型煙囪滑梯、空中鋼索與震撼人心的極限擊鼓表演。", price: "$509" },
+      { time: "16:30", title: "雙城大移動：前進高雄市區", details: "交通：自台南火車站悠閒乘坐鐵道區間車徐徐南下，沿途觀賞南部平疇綠野直到左營新站。", price: "$60" },
+      { time: "19:00", title: "碳佐麻里 (精品和牛燒肉)", details: "飲食：朝聖南部精品燒肉天花板！在當代清水模宏大藝術地標中，享用多汁冷藏和牛與炭火串燒。", price: "$1,800" },
+      { time: "21:00", title: "入住高雄亞灣區海景飯店", details: "住宿：入住頂級星級景觀房，臨窗俯瞰絢麗奪目的愛河港灣、駁二特區與流行音樂中心科技炫彩霓虹 (連假特價)。", price: "$3,500" }
+    ]
+  }
+];
+
+const TravelItinerary = () => {
+  const [activeDayIndex, setActiveDayIndex] = React.useState(1); // Set Day 2 as active initially because of user's core focus!
+  const currentDay = travelData[activeDayIndex];
+
+  return (
+    <div className="space-y-10">
+      {/* Dynamic Day Toggler */}
+      <div className="flex justify-center p-1.5 bg-gray-50 border border-gray-100 rounded-2xl max-w-lg mx-auto">
+        {travelData.map((item, index) => (
+          <button
+            key={index}
+            onClick={() => setActiveDayIndex(index)}
+            className={`flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all flex flex-col items-center ${
+              activeDayIndex === index
+                ? "bg-white text-blue-600 shadow-sm border border-gray-100/50"
+                : "text-gray-400 hover:text-gray-900"
+            }`}
+          >
+            <span className="text-xs tracking-wider opacity-70">{item.day}</span>
+            <span className="text-base mt-0.5">{item.date}</span>
+          </button>
+        ))}
+      </div>
+
+      {/* Detail Layout */}
+      <motion.div
+        key={activeDayIndex}
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        className="grid md:grid-cols-12 gap-10 items-start"
+      >
+        {/* Left Side Timeline (7 Columns) */}
+        <div className="md:col-span-7 space-y-6">
+          <div className="border-l-2 border-blue-100 ml-4 py-2 space-y-8">
+            {currentDay.timeline.map((event, idx) => (
+              <div key={idx} className="relative pl-8 group">
+                {/* Node Line Marker */}
+                <div className="absolute left-[-9px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-blue-600 group-hover:scale-125 transition-transform" />
+                
+                <div className="flex flex-col gap-1.5">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <span className="text-blue-600 font-mono font-bold text-sm bg-blue-50/50 px-2.5 py-0.5 rounded-md">
+                      {event.time}
+                    </span>
+                    <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full flex items-center gap-0.5">
+                      {event.price}
+                    </span>
+                  </div>
+                  
+                  <h4 className="font-bold text-base text-gray-900 group-hover:text-blue-600 transition-colors">
+                    {event.title}
+                  </h4>
+                  <p className="text-sm text-gray-500 leading-relaxed font-sans">
+                    {event.details}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="p-4 bg-gray-50/50 border border-gray-100 rounded-2xl flex justify-between items-center text-xs text-gray-400">
+            <span>旅程規劃：三天兩夜</span>
+            <span>當日預估預算：約 $3,800 + 交通</span>
+          </div>
+        </div>
+
+        {/* Right Side Visual/Description (5 Columns) */}
+        <div className="md:col-span-5 space-y-6">
+          <Card className="overflow-hidden p-0 border border-gray-100 bg-gray-50/50">
+            <div className="relative aspect-4/3 overflow-hidden bg-gray-100">
+              <img
+                src={currentDay.highlightImage}
+                alt={currentDay.imageCaption}
+                className="w-full h-full object-cover select-none"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md border border-gray-100 px-3 py-1 rounded-full text-xs font-extrabold text-gray-800 tracking-wide shadow-sm">
+                精彩地標展示
+              </div>
+            </div>
+            <div className="p-6">
+              <span className={`text-xs font-black uppercase tracking-widest ${currentDay.textTheme}`}>
+                {currentDay.tag}
+              </span>
+              <h3 className="text-lg font-bold text-gray-900 mt-1.5 mb-2">
+                {currentDay.title}
+              </h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-4">
+                {currentDay.desc}
+              </p>
+              <div className="text-xs font-medium text-gray-400 bg-gray-100/50 p-3 rounded-xl border border-gray-100/30">
+                ⭐ {currentDay.imageCaption}
+              </div>
+            </div>
+          </Card>
+        </div>
+      </motion.div>
+
+      {/* Bonus Journey Memories Grid - "另外幾張旅行圖片也加進去" */}
+      <div className="pt-12 border-t border-gray-100/80">
+        <h3 className="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
+          <ImageIcon size={18} className="text-blue-600" /> 三天足跡精彩瞬間寫真
+        </h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {[
+            {
+              title: "安平老厝綠蔭",
+              url: "https://images.unsplash.com/photo-1504618223053-559bdef9dd5a?auto=format&fit=crop&q=80&w=400"
+            },
+            {
+              title: "台南街頭巷弄尋味",
+              url: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&q=80&w=400"
+            },
+            {
+              title: "神農浪漫燈影",
+              url: "https://images.unsplash.com/photo-1549396555-3d7d35124115?auto=format&fit=crop&q=80&w=400"
+            },
+            {
+              title: "高雄駁二漫步之旅",
+              url: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&q=80&w=400"
+            }
+          ].map((item, idx) => (
+            <div key={idx} className="group overflow-hidden rounded-2xl relative bg-gray-50 border border-gray-100/50 hover:-translate-y-1 transition-all">
+              <div className="aspect-square w-full h-full overflow-hidden">
+                <img
+                  src={item.url}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-105 duration-300 transition-transform"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-4">
+                <span className="text-white text-xs font-bold leading-none">{item.title}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default function App() {
   const profileImageUrl = "https://lh3.googleusercontent.com/d/11Gt-2u7MGx5XQYOOQzDJ09JTaS7oluCr";
@@ -215,6 +422,13 @@ export default function App() {
               </div>
             </Card>
           </div>
+        </section>
+
+        {/* Interactive Travel Footprint & Itinerary */}
+        <section id="travel" className="mb-24">
+          <SectionHeader title="南臺灣旅程足跡" icon={Compass} />
+          
+          <TravelItinerary />
         </section>
 
         {/* AI Portfolio Section */}
